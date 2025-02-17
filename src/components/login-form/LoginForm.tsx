@@ -1,20 +1,18 @@
-'use client'
-
 import React from 'react';
-import {useForm} from "react-hook-form";
+import {auth} from "@/server-actions/serverActions";
+import Form from "next/form";
 
 const LoginForm = () => {
-    
-    const {register, handleSubmit} = useForm();
+
     
     return (
         <div>
-            <form onSubmit={handleSubmit(auth)}>
-                <input type="text" {...register('username')} placeholder={'username'}/>
-                <input type="text" {...register('password')} placeholder={'password'}/>
-                {/*<input type="text" {...register('expiresInMins')} placeholder={'expiresInMins'}/>*/}
+            <Form action={auth} >
+                <input type="text" placeholder='username' name='username'/>
+                <input type="text" placeholder='password' name='password'/>
                 <button>Log in</button>
-            </form>
+            </Form>
+
         </div>
     );
 };

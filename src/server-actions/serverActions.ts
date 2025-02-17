@@ -1,7 +1,10 @@
 'use server'
 
 import {login} from "@/services/api.services";
+import {redirect} from "next/navigation";
 
-const save = async (loginData) => {
+export const auth = async (loginData:FormData) => {
     await login(loginData);
+    console.log('action', loginData)
+    redirect('/auth')
 }
