@@ -1,5 +1,6 @@
 import {FC} from "react";
 import {IRecipe} from "@/models/IRecipe";
+import Link from "next/link";
 
 interface IProps {
     recipe: IRecipe;
@@ -8,7 +9,7 @@ interface IProps {
 const Recipe:FC<IProps> = ({recipe}) => {
     return (
         <div>
-            {recipe.id}. {recipe.name}
+            <Link href={`recipes/${recipe.id}`}>{recipe.id}. {recipe.name}.</Link> <br/>
         </div>
     );
 };

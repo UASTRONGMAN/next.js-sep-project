@@ -1,13 +1,18 @@
 import {FC} from "react";
+import {getSingleRecipe} from "@/services/api.services";
+import SingleRecipe from "@/components/single-recipe/SingleRecipe";
 
-interface IProps{
-
+interface IProps {
+    params: {id: string};
 }
 
+const RecipePage:FC<IProps> = async ({params}) => {
+    const {id} = await params;
+    const recipe = await getSingleRecipe(id);
 
-const RecipePage:FC<IProps> = () => {
     return (
         <div>
+            <SingleRecipe recipe={recipe}/>
 
         </div>
     );

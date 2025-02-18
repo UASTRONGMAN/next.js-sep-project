@@ -34,6 +34,18 @@ const getUsers = async (skip:string): Promise<IResponseModel> => {
         .then(value => value.json());
 }
 
+const getFilteredUsers = async (query:string):Promise<IResponseModel> => {
+    const user = await retriveCookie<ILoginResponseModel>("user");
+    return await fetch(urls.filterUsers(query), {
+        method: 'GET',
+        headers: {
+            Authorization: user ? `Bearer ${user.accessToken}` : "",
+        },
+    })
+        .then(value => value.json());
+}
+}
+
 const getRecipes = async (skip:string): Promise<IResponseModel> => {
 
     const user = await retriveCookie<ILoginResponseModel>("user");
