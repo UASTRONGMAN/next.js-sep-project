@@ -10,6 +10,9 @@ const Recipe:FC<IProps> = ({recipe}) => {
     return (
         <div>
             <Link href={`recipes/${recipe.id}`}>{recipe.id}. {recipe.name}.</Link> <br/>
+            {recipe.tags.map((tag) => (
+                <Link href={`recipes/tag/${tag}`} key={tag}>{tag + ' '}</Link>
+            ))}
         </div>
     );
 };

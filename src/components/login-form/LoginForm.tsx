@@ -10,6 +10,7 @@ const LoginForm = () => {
             <Form action={auth} >
                 <input type="text" placeholder='username' name='username'/>
                 <input type="text" placeholder='password' name='password'/>
+                {/*<input type="text" placeholder='expiresInMins' name='expiresInMins'/>*/}
                 <button>Log in</button>
             </Form>
 

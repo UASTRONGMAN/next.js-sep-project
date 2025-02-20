@@ -8,8 +8,8 @@ const urls = {
     filterUsers: (query:string) => baseURL + '/users/search?q=' + query,
     recipes: (skip: string) => baseURL + '/recipes?skip=' + skip,
     recipe: (id: string) => baseURL + '/recipes/' + id,
-    recipeByTag: (recipeTag:string) => baseURL + '/recipes/tag/' + recipeTag
-
+    recipeByTag: (recipeTag:string) => baseURL + '/recipes/tag/' + recipeTag,
+    filterRecipes: (query:string) => baseURL + '/recipes/search?q=' + query,
 }
 
 export {baseURL, urls}

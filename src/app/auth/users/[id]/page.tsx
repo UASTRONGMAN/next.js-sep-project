@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {getSingleUser} from "@/services/api.services";
+import {getRecipes, getSingleUser} from "@/services/api.services";
 import SingleUser from "@/components/single-user/SingleUser";
 
 interface IProps {
@@ -9,10 +9,11 @@ interface IProps {
 const UserPage:FC<IProps> = async ({params}) => {
     const {id} = await params;
     const user = await getSingleUser(id);
+    const response = await getRecipes('0');
 
     return (
         <div>
-            <SingleUser user={user}/>
+            <SingleUser user={user} recipes={id ? response.recipes?.filter(value => value.userId === +id) ?? [] : []}/>
 
         </div>
     );
