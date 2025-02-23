@@ -9,7 +9,7 @@ interface IProps {
 const User:FC<IProps> = ({user}) => {
     return (
         <div>
-            <Link href={`users/${user.id}`}>{user.id}. {user.firstName} {user.lastName}.</Link>
+            <Link href={`/auth/users/${user.id}`}>{user.id}. {user.firstName} {user.lastName}.</Link>
         </div>
     );
 };

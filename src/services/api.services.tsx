@@ -16,7 +16,7 @@ const login = async (loginData: FormData):Promise<ILoginResponseModel> => {
         body: JSON.stringify({
             username: loginData.get('username'),
             password: loginData.get('password'),
-            // expiresInMins: loginData.get('expiresInMins'),
+            expiresInMins: loginData.get('expiresInMins'),
         }),
     })
          .then(value => value.json());

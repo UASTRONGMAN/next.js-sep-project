@@ -5,6 +5,5 @@ import {redirect} from "next/navigation";
 
 export const auth = async (loginData:FormData) => {
     await login(loginData);
-    console.log('action', loginData)
     redirect('/auth')
 }
